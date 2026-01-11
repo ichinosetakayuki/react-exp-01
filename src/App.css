@@ -1,0 +1,121 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Button部品のスタイル */
+.aa {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #000;
+  margin: 10px auto;
+}
+
+.title {
+  font-size: 30px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black;
+  position: relative;
+  /* h1は星より手前に表示したいのでz-indexを指定 */
+  z-index: 2;
+}
+
+.background {
+  /* width: 100%; */
+  position: relative;
+  overflow: hidden;
+  /* コンテナからはみ出した星を隠すため念のため追加 */
+  height: 400px;
+  background-image: url(../public/mc_photo241029ng7.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 16 / 9;
+  /* margin: 2rem; */
+  border: solid 2px lightcoral;
+  box-shadow: 0 0 8px gray;
+}
+
+/* 星のエフェクト */
+.star-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  /* 下半分 */
+  pointer-events: none;
+  z-index: 1;
+  /* 背景と文字の間あたり。文字より手前に来るなら調整が必要だが、background divの中なのでh1の兄弟。h1のz-index次第。 */
+}
+
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+  animation: sparkle 3s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: translateY(15px) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.5);
+  }
+}
